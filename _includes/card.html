@@ -1,0 +1,23 @@
+
+<div class="galleryimg">   
+    <div class="wrapper">
+        {% for img in post.gallery %} 
+            <div class="square">
+                <a href="{{ img.img }}" target="_new" >
+                    <img src="{{ img.img }}" class="grid-item">
+                </a>
+            </div>
+            {% endfor %}
+    </div>   
+    <p>{{ post.caption }} </p>
+</div>
+
+<!-- <div class="gcontainer">
+    <ul class="gimage-gallery">
+        {% for img in post.gallery %} 
+            <li>
+                <img src="{{ img.img }}" alt="" />
+          </li>
+        {% endfor %}
+    </ul>
+  </div> -->

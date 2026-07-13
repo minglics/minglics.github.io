@@ -1,0 +1,44 @@
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+    <article class="archive__item-research">
+            <div class="archive__item-research publication">
+            <span>
+              <div class="archive__item-research title">
+              <!-- <a href="{{ post.url }}">{{post.papertitle | markdownify | remove: "<p>" | remove: "</p>"}}</a> -->
+              {{post.papertitle | markdownify | remove: "<p>" | remove: "</p>"}}
+              </div>
+              <div class="archive__item-research conference">{{post.conference | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+              <div class="archive__item-research authors">{{post.authors | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+              {% if post.PDF %}
+                <a class="archive__item-research link" href="{{ post.PDF }}">PDF</a>
+              {% endif %}
+              {% if post.slide %}
+                <a class="archive__item-research link" href="{{ post.slide }}">Slide</a>
+              {% endif %}
+              {% if post.video %}
+                <a class="archive__item-research link" href="{{ post.video }}">Video</a>
+              {% endif %}
+              {% if post.github %}
+                <a class="archive__item-research link" href="{{ post.github }}">Code</a>
+              {% endif %}
+              {% if post.demo %}
+                <a class="archive__item-research link" href="{{ post.demo }}">Demo</a>
+              {% endif %}
+              {% if post.dataset %}
+                <a class="archive__item-research link" href="{{ post.dataset }}">Dataset</a>
+              {% endif %}
+            </span>
+          </div>
+      </article>
+</div>

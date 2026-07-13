@@ -1,16 +1,23 @@
-## Hi there 👋
+# Ming Li Website
 
-<!--
-**minglics/minglics** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This repository contains the Jekyll source for `https://minglics.github.io`.
 
-Here are some ideas to get you started:
+The site is based on the Minimal Mistakes Jekyll theme and is deployed with GitHub Actions. Source content lives mainly in:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- `_pages/`
+- `_posts/`
+- `images/`
+- `publications/`
+- `slides/`
+- `videos/`
+
+The generated `_site/` folder is not committed. GitHub Actions builds it during deployment.
+
+## Local Preview
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Then open `http://localhost:4000`.

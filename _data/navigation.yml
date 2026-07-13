@@ -1,0 +1,18 @@
+# main links
+main:
+  - title: "Home"
+    url: index.html
+  - title: "News"
+    url: /categories/news.html
+  - title: "Publications" 
+    url: /categories/publications.html
+  - title: "Research" 
+    url: /categories/researches.html
+  - title: "Teaching"
+    url: /categories/teaching.html
+  - title: "Biography"
+    url: /categories/biography.html
+  - title: "People"
+    url: /categories/people.html
+  - title: "Gallery"
+    url: /categories/gallery.html

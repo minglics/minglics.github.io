@@ -1,0 +1,20 @@
+<div class="research" style="width:140% ! important;margin-left:-20% ! important;">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <!-- Title -->
+      <img src="{{ page.logo }}" class="logo">
+      <div class="aligned">
+        <h1 id="page-title" class="page__title"> {{ page.title | markdownify }} </h1>
+      </div>
+      <!-- Sponsor -->
+      <p class="header">{{ page.Sponsor }}</p>
+      <!--Duration-->
+      <p class="header">{{ page.Duration }}</p>
+      <!-- Authors -->
+      <p class="research items authors">{{ page.authors }}</p>
+      <!-- Description -->
+      <p class="desc">
+        {{ content }}
+      </p>
+    {% endunless %}
+    
+  </div>

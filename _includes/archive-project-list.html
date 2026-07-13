@@ -1,0 +1,16 @@
+
+<article class="archive__item-project items">
+  <a href= "{{ post.url | relative_url }}" target="_blank">
+    {% if post.image %}
+    <img class="img2" src="{{post.image}}" alt="paper image" width = "5em">
+  {% else %}
+    <img class="img2" src="./../coming_soon.jpg" alt="coming soon" width = "5em">
+  {% endif %}
+  <div class="archive__item-project title">
+   <a href= "{{ post.url | relative_url }}" target="_blank">
+      <p> {{post.papertitle | markdownify | remove: "<p>" | remove: "</p>"}}</p>
+   </a> 
+   <div class="archive__item-project items authors">{{post.Sponsor | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+  </div> 
+  </a>  
+  </article>

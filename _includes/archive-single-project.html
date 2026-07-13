@@ -1,0 +1,34 @@
+
+  <article class="archive__item-project">
+    {% if post.image %}
+      <img class="img2" src="{{post.image}}" alt="paper image" width = "5em">
+    {% else %}
+      <img class="img2" src="./../coming_soon.jpg" alt="coming soon" width = "5em">
+    {% endif %}
+    <div class="archive__item-project content-align items">
+      <div class="archive__item-project items title"> Title:  </div>
+      <div class="archive__item-project items title"> {{post.papertitle | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+      <div class="archive__item-project items title"> Sponsor: </div>
+      <div class="archive__item-project items conference">{{post.Sponsor | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+      <div class="archive__item-project items title"> Authors: </div>
+      <div class="archive__item-project authors"> {{post.authors | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+      <div class="archive__item-project items title">Period: </div>
+      <div class="archive__item-project authors"> {{post.Duration | markdownify | remove: "<p>" | remove: "</p>"}}</div>
+    </div>  
+    {% if post.video == "" %}
+      <div class="description">
+        {{post.description}}
+      </div><br>
+      <div class="researchVideo" style="display:none">
+        <iframe src="{{ post.video }}" frameborder="0"> </iframe>
+      </div>
+    {% else %}
+      <div class="descriptionD">
+        {{post.description}}
+      </div>
+      <div class="researchVideo">
+        <iframe src="{{ post.video }}" frameborder="0"> </iframe>
+      </div>
+    {% endif %}
+    
+  </article>

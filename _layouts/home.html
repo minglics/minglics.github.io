@@ -1,0 +1,71 @@
+---
+layout: archive
+classes: wide
+---
+
+{{ content }}
+
+<div class="archive__item-research">
+My research interests are in the general areas of networking, mobile systems (e.g., VR/XR), and cybersecurity. I attempt to explore the research topics with approaches rooted in applied AI, sensing, and computing. My research has been funded by NSF, DoT, and NIH. I am a recipient of the <b>NSF CRII Award</b> (2016), <b>NSF CAREER Award</b> (2020), and <b>N2Women Rising Star</b> in Networking and Communications (2023).
+</div>
+<br>
+Recent Research Areas:
+<ul>
+  <li>Human factors in mobile systems (VR/XR) and networks: <a href="publications/Bere.pdf">[Mobicom'24],<a href="publications/Sensys22.pdf">[Sensys'23]</a>,<a href="publications/eyeqoe.pdf">[Ubicomp'22]</a>,<a href="publications/STEP.pdf">[TMC'20]</a></li>
+
+  <li>User-centered security, user authentication: <a href="publications/Avara.pdf">[CCS'24-1], <a href="publications/behavior24.pdf">[Sensys'24], <a href="publications/NDSS23.pdf">[NDSS'23]</a>,<a href="publications/acsec23.pdf">[ACSAC'23]</a>,<a href="publications/BlinKey.pdf">[Ubicomp'21]</a>,<a href="publications/AsiaCCS18.pdf">[ASIACCS'18]</a></li>
+
+  <li>IoT/Device security, side channels: <a href="publications/GPSBuster.pdf">[CCS'24-2], <a href="publications/freeEM.pdf">[Mobisys'24],<a href="publications/audioeavesdropping.pdf">[NDSS'24]</a>,<a href="publications/Pairing.pdf">[CCS'21]</a><a href="publications/sipster.pdf">[ACSAC'21]</a>,<a href="publications/periscope.pdf">[CCS'20]</a></li>
+
+  <li>I am also interested in exploring cross-disciplinary research, particularly on travel safety of vulnerable road users: <a href="publications/cycleguard.pdf">[Ubicomp'22]</a><a href="publications/Acoussist.pdf">[Ubicomp'21]</a></li>
+</ul>
+
+
+
+
+
+ <!--
+Before joining UTA, I worked as an Assistant Professor at University of Nevada, Reno for four years (2014 to 2018). I received my PhD at Mississippi State University in 2014. Before that, I received my master's degree from Beijing University of Posts and Telecommunications in 2010, and bachelor's degree from Sun Yat-Sen University in 2007.
+--> 
+
+
+{% capture notice-2 %}
+__Openings:__
+We are looking for self-motivated Ph.D. students who are committed to research.
+{% endcapture %}  
+
+<div class="notice--info">
+  {{ notice-2 | markdownify | remove: "<p>" | remove: "</p>"}}
+</div>
+
+<h3 class="archive__subtitle">Recent Publications</h3>
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign count = 0 %}
+<div class="entries-{{ entries_layout }}">
+  {% for post in site.categories.publications %}
+    {% unless post.notshowfirst %}
+      {% include archive-single-researches2.html type=entries_layout %}
+      {% assign count = count | plus: 1 %}
+    {% endunless %}
+    {% if count == 10 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+ <!-- <h3 class="archive__subtitle">Recent News</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% for post in site.categories.News %}
+    {% include archive-single.html type=entries_layout %}
+  {% endfor %}
+</div> -->
+
+<!-- {% include paginator.html %} -->

@@ -1,0 +1,45 @@
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+
+{% if raw_title contains "[h_start]" and raw_title contains "[h_end]" and post.link %}
+  {% assign start_tag = "<a href='" 
+    | append: post.link 
+    | append: "' target='_blank' rel='noopener'>" %}
+  {% assign title_with_link = raw_title
+    | replace: "[h_start]", start_tag
+    | replace: "[h_end]", "</a>" %}
+{% else %}
+  {% assign title_with_link = raw_title %}
+{% endif %}
+
+
+
+<div class="{{ include.type | default: 'list' }}__item">
+  <article class="archive__item_news" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ teaser | relative_url }}" alt="">
+      </div>
+    {% endif %}
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      <small> 
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m" }}
+        {% if site.category_archive.type and post.categories[0] and site.tag_archive.type and post.tags[0] %}
+          {%- include post__taxonomy2.html -%}
+        {% endif %}
+      </small><br>
+      
+      <div class="archive__item-news item" style="font-weight: normal;">
+        {{ title_with_link }} asdasd
+      </div>
+    </h2>
+
+    {% include page__meta.html type=include.type %}
+  </article>
+</div>
